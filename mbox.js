@@ -31,8 +31,8 @@ fs.readFile(fileName, 'utf8', function (err, f) {
           for (j=0; j<offsetI; j++) {
                arrReverse[i+j] = false;
           }
-          i = i+j;
-          arrReverse[i+1] = true;
+          arrReverse[i+j+1] = true;
+          i = i + j + 1;
         } else {
           arrReverse[i] = arrReverse[i-1];  
         }
@@ -41,6 +41,8 @@ fs.readFile(fileName, 'utf8', function (err, f) {
 
     arrLine.pop();
     arrLine.shift();
+    arrReverse.pop();
+    arrReverse.shift();
     
     var arrNewLine = arrLine.map( (element, ind) => {
         if (arrReverse[ind]) {
@@ -68,8 +70,7 @@ function isEndOfMessage(l1, l2) {
         if (!Number.isInteger(parseInt(arrL2[i]))) return false;
 
     } 
-    
-    console.log(l1 + " ==== " + l2)
+
    return true;
 }    
 //
@@ -86,7 +87,7 @@ function locateStartOfMessage(arrLine, ind) {
         if (arrLine[ind+j+1].substring(0,6) === "Date: ") hasDate = true;
         if (arrLine[ind+j+1].substring(0,9) === "Subject: ") hasSubject = true;
     }
-    if (hasDate && hasSubject) return j;
+    if (hasDate && hasSubject) return j+1;
     else return 0;
 }
 

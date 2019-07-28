@@ -41,16 +41,34 @@ fs.readFile(fileName, 'utf8', function (err, f) {
 
     arrLine.pop();
     arrLine.shift();
-    arrReverse.pop();
     arrReverse.shift();
     
-    var arrNewLine = arrLine.map( (element, ind) => {
-        if (arrReverse[ind]) {
-            return "R " + arrLine[ind];
-        } else {
-            return "- " + arrLine[ind];
-        }
-    })
+    var arrNewLine = [];
+    var arrHold = [];
+
+    while (arrReverse.length > 0) {
+     if (arrReverse.shift()) {
+        arrHold.push(arrLine.shift());
+     } else {
+        if (arrHold.length > 0) {
+            arrNewLine = arrNewLine.concat(arrHold.reverse());
+            arrHold = [];
+        }    
+        arrNewLine.push(arrLine.shift());
+     }
+    }
+     if (arrHold.length > 0) {
+         arrNewLine = arrNewLine.concat(arrHold.reverse());
+         arrHold=[];
+     } 
+
+    // var arrNewLine = arrLine.map( (element, ind) => {
+    //     if (arrReverse[ind]) {
+    //         return "R " + arrLine[ind];
+    //     } else {
+    //         return "- " + arrLine[ind];
+    //     }
+    // })
 
     console.log(arrNewLine);
     

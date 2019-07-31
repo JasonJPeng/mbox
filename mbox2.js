@@ -10,7 +10,7 @@ const readline = require('readline');
 const fs = require('fs');
 var buffer = [];
 var  statusRev = false;
-var revFile = process.argv[2]  + "-rev";
+var revFile = process.argv[2]  + "-rev"; // output file
 
 instream = fs.createReadStream( process.argv[2])
 
@@ -50,10 +50,6 @@ rl.on("line", function(line) {
 
     console.log("Done!");
 })
-
-// rl.on('close', function () {
-//     console.log("Done");
-// })
 
 
 // Need to have "From ", "From: ", "Date: ", "Subject: "

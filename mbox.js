@@ -62,14 +62,6 @@ fs.readFile(fileName, 'utf8', function (err, f) {
          arrHold=[];
      } 
 
-    // var arrNewLine = arrLine.map( (element, ind) => {
-    //     if (arrReverse[ind]) {
-    //         return "R " + arrLine[ind];
-    //     } else {
-    //         return "- " + arrLine[ind];
-    //     }
-    // })
-
     console.log(arrNewLine);
     
 });

@@ -2,14 +2,15 @@
 // Example of using readline
 //
 //   https://itnext.io/using-node-js-to-read-really-really-large-files-pt-1-d2057fe76b33
+//
+//   In case the input file is very very big, we need to use readline
 
 const readline = require('readline');
 // const stream = 
 const fs = require('fs');
 var buffer = [];
 var  statusRev = false;
-// var revFile = process.argv[2]  + "-rev";
-var revFile = "rev.txt"
+var revFile = process.argv[2]  + "-rev";
 
 instream = fs.createReadStream( process.argv[2])
 
@@ -17,9 +18,7 @@ const rl = readline.createInterface({
     input: instream
     // output: process.stdout
 });
-var lineCounter =0;
 rl.on("line", function(line) {
-    lineCounter++;
     buffer.push(line);
 // find the begin of messahe    
     if (!statusRev) {
@@ -33,25 +32,32 @@ rl.on("line", function(line) {
     } else {
     // end of message -- and ?.?.?.    
       if (isThreeDots(line) && buffer[buffer.length-2].substring(0,2) === "--") {
-          console.log("...........")
           writeReverX2(buffer);
           buffer = [];
           statusRev = false;
       }
     }
+}).on('close', function () {
+    if (statusRev) {
+        while (buffer.length > 0) {
+            fs.appendFileSync(revFile, buffer.pop() + "\n")
+        }
+    } else {
+        while (buffer.length > 0) {
+            fs.appendFileSync(revFile, buffer.shift() + "\n")
+        }
+    }
 
-    // console.log("---  > ", line );
+    console.log("Done!");
 })
 
-rl.on('close', function () {
-    console.log("Done");
-})
+// rl.on('close', function () {
+//     console.log("Done");
+// })
 
 
 // Need to have "From ", "From: ", "Date: ", "Subject: "
 function isBegin(buffer) {
-
-    console.log(lineCounter, buffer);
 
   var testKeys  = [
       "From ", "From: ", "Date: ", "Subject: "
@@ -74,7 +80,6 @@ function isBegin(buffer) {
 
 // find the pattern of  ?.?.?. such as 2.4.5.
 function isThreeDots(str) {
-    console.log("=====================================", str)
    var str1 = str.split(".");
    if (str1.length < 3) {
        return false;
@@ -85,12 +90,10 @@ function isThreeDots(str) {
         }
     }        
    }  
-   console.log("===========++++++ ", str)
    return true;  
 }
 
 function writeBuffer(buffer) {
-    console.log("write buffer ---->   ", buffer )
     buffer.forEach(function (line) {
         fs.appendFileSync(revFile, line + "\n");
     })  

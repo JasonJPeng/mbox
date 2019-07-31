@@ -5,16 +5,21 @@ var fileName = process.argv[2];
 var symBegin = "@@@begin", symEnd = "@@@end";
 
 // ==================================================================
+// Read the entire file as an array  -- arrLine
+// create another array arrReverse to match arrLine. 
+// arrReverse is like [ true true ... false  false ...] 
+// true means the line is sujceted to reverse 
 // ======================================================================
 fs.readFile(fileName, 'utf8', function (err, f) {
     arrLine =  f.split('\n')
-    
+// adding begin and end symbols to indicate the start or end of file.    
     arrLine.unshift(symBegin);
     arrLine.push(symEnd);
     // console.log(arrLine);
     arrReverse[0] = false;
     for (var i = 1; arrLine[i+1] != symEnd; i++) {
         // looking for  end of email message   -- followed by ?.?.?
+        //  -- and followd by ?.?.?. ex. "1.4.16. mkkk...." 
 
         if (isEndOfMessage(arrLine[i], arrLine[i+1])) {
             arrReverse[i] = false;
@@ -44,7 +49,7 @@ fs.readFile(fileName, 'utf8', function (err, f) {
     arrReverse.shift();
     
     var arrNewLine = [];
-    var arrHold = [];
+    var arrHold = []; // hold lines for reversing
 
     while (arrReverse.length > 0) {
      if (arrReverse.shift()) {
@@ -63,6 +68,9 @@ fs.readFile(fileName, 'utf8', function (err, f) {
      } 
 
     console.log(arrNewLine);
+    while (arrNewLine.length > 0) {
+        fs.appendFileSync('out.txt', arrNewLine.pop() + "\n")
+    }
     
 });
 

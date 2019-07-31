@@ -1,0 +1,965 @@
+8 [
+  'From nobody Mon Sep 17 00:00:00 2001',
+  'From: A (zzz)',
+  '      U',
+  '      Thor',
+  '      <a.u.thor@example.com> (Comment)',
+  'Date: Fri, 9 Jun 2006 00:44:16 -0700',
+  'Subject: [PATCH] a commit.',
+  ''
+]
+====    [ 'From: ', 'Date: ', 'Subject: ' ]
+====    [ 'Date: ', 'Subject: ' ]
+====    [ 'Subject: ' ]
+====    []
+===True True====>  Subject: [PATCH] a commit.
+===True True====>  
+$$$$$$$$$$$  8 false
+10 [
+  'From nobody Mon Sep 17 00:00:00 2001',
+  'From: A (zzz)',
+  '      U',
+  '      Thor',
+  '      <a.u.thor@example.com> (Comment)',
+  'Date: Fri, 9 Jun 2006 00:44:16 -0700',
+  'Subject: [PATCH] a commit.',
+  '',
+  'Here is a patch from A U Thor.',
+  ''
+]
+====    [ 'From: ', 'Date: ', 'Subject: ' ]
+====    [ 'Date: ', 'Subject: ' ]
+====    [ 'Subject: ' ]
+====    []
+===True True====>  Subject: [PATCH] a commit.
+===True True====>  
+===True True====>  Here is a patch from A U Thor.
+===True True====>  
+$$$$$$$$$$$  10 false
+14 [
+  'From nobody Mon Sep 17 00:00:00 2001',
+  'From: A (zzz)',
+  '      U',
+  '      Thor',
+  '      <a.u.thor@example.com> (Comment)',
+  'Date: Fri, 9 Jun 2006 00:44:16 -0700',
+  'Subject: [PATCH] a commit.',
+  '',
+  'Here is a patch from A U Thor.',
+  '',
+  '---',
+  ' foo |    2 +-',
+  ' 1 files changed, 1 insertions(+), 1 deletions(-)',
+  ''
+]
+====    [ 'From: ', 'Date: ', 'Subject: ' ]
+====    [ 'Date: ', 'Subject: ' ]
+====    [ 'Subject: ' ]
+====    []
+===True True====>  Subject: [PATCH] a commit.
+===True True====>  
+===True True====>  Here is a patch from A U Thor.
+===True True====>  
+===True True====>  ---
+===True True====>   foo |    2 +-
+===True True====>   1 files changed, 1 insertions(+), 1 deletions(-)
+===True True====>  
+$$$$$$$$$$$  14 false
+24 [
+  'From nobody Mon Sep 17 00:00:00 2001',
+  'From: A (zzz)',
+  '      U',
+  '      Thor',
+  '      <a.u.thor@example.com> (Comment)',
+  'Date: Fri, 9 Jun 2006 00:44:16 -0700',
+  'Subject: [PATCH] a commit.',
+  '',
+  'Here is a patch from A U Thor.',
+  '',
+  '---',
+  ' foo |    2 +-',
+  ' 1 files changed, 1 insertions(+), 1 deletions(-)',
+  '',
+  'diff --git a/foo b/foo',
+  'index 9123cdc..918dcf8 100644',
+  '--- a/foo',
+  '+++ b/foo',
+  '@@ -1 +1 @@',
+  '-Fri Jun  9 00:44:04 PDT 2006',
+  '+Fri Jun  9 00:44:13 PDT 2006',
+  '-- ',
+  '1.4.0.g6f2b',
+  ''
+]
+====    [ 'From: ', 'Date: ', 'Subject: ' ]
+====    [ 'Date: ', 'Subject: ' ]
+====    [ 'Subject: ' ]
+====    []
+===True True====>  Subject: [PATCH] a commit.
+===True True====>  
+===True True====>  Here is a patch from A U Thor.
+===True True====>  
+===True True====>  ---
+===True True====>   foo |    2 +-
+===True True====>   1 files changed, 1 insertions(+), 1 deletions(-)
+===True True====>  
+===True True====>  diff --git a/foo b/foo
+===True True====>  index 9123cdc..918dcf8 100644
+===True True====>  --- a/foo
+===True True====>  +++ b/foo
+===True True====>  @@ -1 +1 @@
+===True True====>  -Fri Jun  9 00:44:04 PDT 2006
+===True True====>  +Fri Jun  9 00:44:13 PDT 2006
+===True True====>  -- 
+===True True====>  1.4.0.g6f2b
+===True True====>  
+$$$$$$$$$$$  24 false
+29 [
+  'From nobody Mon Sep 17 00:00:00 2001',
+  'From: A (zzz)',
+  '      U',
+  '      Thor',
+  '      <a.u.thor@example.com> (Comment)',
+  'Date: Fri, 9 Jun 2006 00:44:16 -0700',
+  'Subject: [PATCH] a commit.',
+  '',
+  'Here is a patch from A U Thor.',
+  '',
+  '---',
+  ' foo |    2 +-',
+  ' 1 files changed, 1 insertions(+), 1 deletions(-)',
+  '',
+  'diff --git a/foo b/foo',
+  'index 9123cdc..918dcf8 100644',
+  '--- a/foo',
+  '+++ b/foo',
+  '@@ -1 +1 @@',
+  '-Fri Jun  9 00:44:04 PDT 2006',
+  '+Fri Jun  9 00:44:13 PDT 2006',
+  '-- ',
+  '1.4.0.g6f2b',
+  '',
+  'From nobody Mon Sep 17 00:00:00 2001',
+  'From: A U Thor <a.u.thor@example.com>',
+  'Date: Fri, 9 Jun 2006 00:44:16 -0700',
+  'Subject: [PATCH] another patch',
+  ''
+]
+====    [ 'From: ', 'Date: ', 'Subject: ' ]
+====    [ 'Date: ', 'Subject: ' ]
+====    [ 'Subject: ' ]
+====    []
+===True True====>  Subject: [PATCH] a commit.
+===True True====>  
+===True True====>  Here is a patch from A U Thor.
+===True True====>  
+===True True====>  ---
+===True True====>   foo |    2 +-
+===True True====>   1 files changed, 1 insertions(+), 1 deletions(-)
+===True True====>  
+===True True====>  diff --git a/foo b/foo
+===True True====>  index 9123cdc..918dcf8 100644
+===True True====>  --- a/foo
+===True True====>  +++ b/foo
+===True True====>  @@ -1 +1 @@
+===True True====>  -Fri Jun  9 00:44:04 PDT 2006
+===True True====>  +Fri Jun  9 00:44:13 PDT 2006
+===True True====>  -- 
+===True True====>  1.4.0.g6f2b
+===True True====>  
+===True True====>  From nobody Mon Sep 17 00:00:00 2001
+===True True====>  From: A U Thor <a.u.thor@example.com>
+===True True====>  Date: Fri, 9 Jun 2006 00:44:16 -0700
+===True True====>  Subject: [PATCH] another patch
+===True True====>  
+$$$$$$$$$$$  29 false
+32 [
+  'From nobody Mon Sep 17 00:00:00 2001',
+  'From: A (zzz)',
+  '      U',
+  '      Thor',
+  '      <a.u.thor@example.com> (Comment)',
+  'Date: Fri, 9 Jun 2006 00:44:16 -0700',
+  'Subject: [PATCH] a commit.',
+  '',
+  'Here is a patch from A U Thor.',
+  '',
+  '---',
+  ' foo |    2 +-',
+  ' 1 files changed, 1 insertions(+), 1 deletions(-)',
+  '',
+  'diff --git a/foo b/foo',
+  'index 9123cdc..918dcf8 100644',
+  '--- a/foo',
+  '+++ b/foo',
+  '@@ -1 +1 @@',
+  '-Fri Jun  9 00:44:04 PDT 2006',
+  '+Fri Jun  9 00:44:13 PDT 2006',
+  '-- ',
+  '1.4.0.g6f2b',
+  '',
+  'From nobody Mon Sep 17 00:00:00 2001',
+  'From: A U Thor <a.u.thor@example.com>',
+  'Date: Fri, 9 Jun 2006 00:44:16 -0700',
+  'Subject: [PATCH] another patch',
+  '',
+  'Here is a patch from A U Thor.  This addresses the issue raised in the',
+  'message:',
+  ''
+]
+====    [ 'From: ', 'Date: ', 'Subject: ' ]
+====    [ 'Date: ', 'Subject: ' ]
+====    [ 'Subject: ' ]
+====    []
+===True True====>  Subject: [PATCH] a commit.
+===True True====>  
+===True True====>  Here is a patch from A U Thor.
+===True True====>  
+===True True====>  ---
+===True True====>   foo |    2 +-
+===True True====>   1 files changed, 1 insertions(+), 1 deletions(-)
+===True True====>  
+===True True====>  diff --git a/foo b/foo
+===True True====>  index 9123cdc..918dcf8 100644
+===True True====>  --- a/foo
+===True True====>  +++ b/foo
+===True True====>  @@ -1 +1 @@
+===True True====>  -Fri Jun  9 00:44:04 PDT 2006
+===True True====>  +Fri Jun  9 00:44:13 PDT 2006
+===True True====>  -- 
+===True True====>  1.4.0.g6f2b
+===True True====>  
+===True True====>  From nobody Mon Sep 17 00:00:00 2001
+===True True====>  From: A U Thor <a.u.thor@example.com>
+===True True====>  Date: Fri, 9 Jun 2006 00:44:16 -0700
+===True True====>  Subject: [PATCH] another patch
+===True True====>  
+===True True====>  Here is a patch from A U Thor.  This addresses the issue raised in the
+===True True====>  message:
+===True True====>  
+$$$$$$$$$$$  32 false
+36 [
+  'From nobody Mon Sep 17 00:00:00 2001',
+  'From: A (zzz)',
+  '      U',
+  '      Thor',
+  '      <a.u.thor@example.com> (Comment)',
+  'Date: Fri, 9 Jun 2006 00:44:16 -0700',
+  'Subject: [PATCH] a commit.',
+  '',
+  'Here is a patch from A U Thor.',
+  '',
+  '---',
+  ' foo |    2 +-',
+  ' 1 files changed, 1 insertions(+), 1 deletions(-)',
+  '',
+  'diff --git a/foo b/foo',
+  'index 9123cdc..918dcf8 100644',
+  '--- a/foo',
+  '+++ b/foo',
+  '@@ -1 +1 @@',
+  '-Fri Jun  9 00:44:04 PDT 2006',
+  '+Fri Jun  9 00:44:13 PDT 2006',
+  '-- ',
+  '1.4.0.g6f2b',
+  '',
+  'From nobody Mon Sep 17 00:00:00 2001',
+  'From: A U Thor <a.u.thor@example.com>',
+  'Date: Fri, 9 Jun 2006 00:44:16 -0700',
+  'Subject: [PATCH] another patch',
+  '',
+  'Here is a patch from A U Thor.  This addresses the issue raised in the',
+  'message:',
+  '',
+  'From: Nit Picker <nit.picker@example.net>',
+  'Subject: foo is too old',
+  'Message-Id: <nitpicker.12121212@example.net>',
+  ''
+]
+====    [ 'From: ', 'Date: ', 'Subject: ' ]
+====    [ 'Date: ', 'Subject: ' ]
+====    [ 'Subject: ' ]
+====    []
+===True True====>  Subject: [PATCH] a commit.
+===True True====>  
+===True True====>  Here is a patch from A U Thor.
+===True True====>  
+===True True====>  ---
+===True True====>   foo |    2 +-
+===True True====>   1 files changed, 1 insertions(+), 1 deletions(-)
+===True True====>  
+===True True====>  diff --git a/foo b/foo
+===True True====>  index 9123cdc..918dcf8 100644
+===True True====>  --- a/foo
+===True True====>  +++ b/foo
+===True True====>  @@ -1 +1 @@
+===True True====>  -Fri Jun  9 00:44:04 PDT 2006
+===True True====>  +Fri Jun  9 00:44:13 PDT 2006
+===True True====>  -- 
+===True True====>  1.4.0.g6f2b
+===True True====>  
+===True True====>  From nobody Mon Sep 17 00:00:00 2001
+===True True====>  From: A U Thor <a.u.thor@example.com>
+===True True====>  Date: Fri, 9 Jun 2006 00:44:16 -0700
+===True True====>  Subject: [PATCH] another patch
+===True True====>  
+===True True====>  Here is a patch from A U Thor.  This addresses the issue raised in the
+===True True====>  message:
+===True True====>  
+===True True====>  From: Nit Picker <nit.picker@example.net>
+===True True====>  Subject: foo is too old
+===True True====>  Message-Id: <nitpicker.12121212@example.net>
+===True True====>  
+$$$$$$$$$$$  36 false
+38 [
+  'From nobody Mon Sep 17 00:00:00 2001',
+  'From: A (zzz)',
+  '      U',
+  '      Thor',
+  '      <a.u.thor@example.com> (Comment)',
+  'Date: Fri, 9 Jun 2006 00:44:16 -0700',
+  'Subject: [PATCH] a commit.',
+  '',
+  'Here is a patch from A U Thor.',
+  '',
+  '---',
+  ' foo |    2 +-',
+  ' 1 files changed, 1 insertions(+), 1 deletions(-)',
+  '',
+  'diff --git a/foo b/foo',
+  'index 9123cdc..918dcf8 100644',
+  '--- a/foo',
+  '+++ b/foo',
+  '@@ -1 +1 @@',
+  '-Fri Jun  9 00:44:04 PDT 2006',
+  '+Fri Jun  9 00:44:13 PDT 2006',
+  '-- ',
+  '1.4.0.g6f2b',
+  '',
+  'From nobody Mon Sep 17 00:00:00 2001',
+  'From: A U Thor <a.u.thor@example.com>',
+  'Date: Fri, 9 Jun 2006 00:44:16 -0700',
+  'Subject: [PATCH] another patch',
+  '',
+  'Here is a patch from A U Thor.  This addresses the issue raised in the',
+  'message:',
+  '',
+  'From: Nit Picker <nit.picker@example.net>',
+  'Subject: foo is too old',
+  'Message-Id: <nitpicker.12121212@example.net>',
+  '',
+  'Hopefully this would fix the problem stated there.',
+  ''
+]
+====    [ 'From: ', 'Date: ', 'Subject: ' ]
+====    [ 'Date: ', 'Subject: ' ]
+====    [ 'Subject: ' ]
+====    []
+===True True====>  Subject: [PATCH] a commit.
+===True True====>  
+===True True====>  Here is a patch from A U Thor.
+===True True====>  
+===True True====>  ---
+===True True====>   foo |    2 +-
+===True True====>   1 files changed, 1 insertions(+), 1 deletions(-)
+===True True====>  
+===True True====>  diff --git a/foo b/foo
+===True True====>  index 9123cdc..918dcf8 100644
+===True True====>  --- a/foo
+===True True====>  +++ b/foo
+===True True====>  @@ -1 +1 @@
+===True True====>  -Fri Jun  9 00:44:04 PDT 2006
+===True True====>  +Fri Jun  9 00:44:13 PDT 2006
+===True True====>  -- 
+===True True====>  1.4.0.g6f2b
+===True True====>  
+===True True====>  From nobody Mon Sep 17 00:00:00 2001
+===True True====>  From: A U Thor <a.u.thor@example.com>
+===True True====>  Date: Fri, 9 Jun 2006 00:44:16 -0700
+===True True====>  Subject: [PATCH] another patch
+===True True====>  
+===True True====>  Here is a patch from A U Thor.  This addresses the issue raised in the
+===True True====>  message:
+===True True====>  
+===True True====>  From: Nit Picker <nit.picker@example.net>
+===True True====>  Subject: foo is too old
+===True True====>  Message-Id: <nitpicker.12121212@example.net>
+===True True====>  
+===True True====>  Hopefully this would fix the problem stated there.
+===True True====>  
+$$$$$$$$$$$  38 false
+39 [
+  'From nobody Mon Sep 17 00:00:00 2001',
+  'From: A (zzz)',
+  '      U',
+  '      Thor',
+  '      <a.u.thor@example.com> (Comment)',
+  'Date: Fri, 9 Jun 2006 00:44:16 -0700',
+  'Subject: [PATCH] a commit.',
+  '',
+  'Here is a patch from A U Thor.',
+  '',
+  '---',
+  ' foo |    2 +-',
+  ' 1 files changed, 1 insertions(+), 1 deletions(-)',
+  '',
+  'diff --git a/foo b/foo',
+  'index 9123cdc..918dcf8 100644',
+  '--- a/foo',
+  '+++ b/foo',
+  '@@ -1 +1 @@',
+  '-Fri Jun  9 00:44:04 PDT 2006',
+  '+Fri Jun  9 00:44:13 PDT 2006',
+  '-- ',
+  '1.4.0.g6f2b',
+  '',
+  'From nobody Mon Sep 17 00:00:00 2001',
+  'From: A U Thor <a.u.thor@example.com>',
+  'Date: Fri, 9 Jun 2006 00:44:16 -0700',
+  'Subject: [PATCH] another patch',
+  '',
+  'Here is a patch from A U Thor.  This addresses the issue raised in the',
+  'message:',
+  '',
+  'From: Nit Picker <nit.picker@example.net>',
+  'Subject: foo is too old',
+  'Message-Id: <nitpicker.12121212@example.net>',
+  '',
+  'Hopefully this would fix the problem stated there.',
+  '',
+  ''
+]
+====    [ 'From: ', 'Date: ', 'Subject: ' ]
+====    [ 'Date: ', 'Subject: ' ]
+====    [ 'Subject: ' ]
+====    []
+===True True====>  Subject: [PATCH] a commit.
+===True True====>  
+===True True====>  Here is a patch from A U Thor.
+===True True====>  
+===True True====>  ---
+===True True====>   foo |    2 +-
+===True True====>   1 files changed, 1 insertions(+), 1 deletions(-)
+===True True====>  
+===True True====>  diff --git a/foo b/foo
+===True True====>  index 9123cdc..918dcf8 100644
+===True True====>  --- a/foo
+===True True====>  +++ b/foo
+===True True====>  @@ -1 +1 @@
+===True True====>  -Fri Jun  9 00:44:04 PDT 2006
+===True True====>  +Fri Jun  9 00:44:13 PDT 2006
+===True True====>  -- 
+===True True====>  1.4.0.g6f2b
+===True True====>  
+===True True====>  From nobody Mon Sep 17 00:00:00 2001
+===True True====>  From: A U Thor <a.u.thor@example.com>
+===True True====>  Date: Fri, 9 Jun 2006 00:44:16 -0700
+===True True====>  Subject: [PATCH] another patch
+===True True====>  
+===True True====>  Here is a patch from A U Thor.  This addresses the issue raised in the
+===True True====>  message:
+===True True====>  
+===True True====>  From: Nit Picker <nit.picker@example.net>
+===True True====>  Subject: foo is too old
+===True True====>  Message-Id: <nitpicker.12121212@example.net>
+===True True====>  
+===True True====>  Hopefully this would fix the problem stated there.
+===True True====>  
+===True True====>  
+$$$$$$$$$$$  39 false
+46 [
+  'From nobody Mon Sep 17 00:00:00 2001',
+  'From: A (zzz)',
+  '      U',
+  '      Thor',
+  '      <a.u.thor@example.com> (Comment)',
+  'Date: Fri, 9 Jun 2006 00:44:16 -0700',
+  'Subject: [PATCH] a commit.',
+  '',
+  'Here is a patch from A U Thor.',
+  '',
+  '---',
+  ' foo |    2 +-',
+  ' 1 files changed, 1 insertions(+), 1 deletions(-)',
+  '',
+  'diff --git a/foo b/foo',
+  'index 9123cdc..918dcf8 100644',
+  '--- a/foo',
+  '+++ b/foo',
+  '@@ -1 +1 @@',
+  '-Fri Jun  9 00:44:04 PDT 2006',
+  '+Fri Jun  9 00:44:13 PDT 2006',
+  '-- ',
+  '1.4.0.g6f2b',
+  '',
+  'From nobody Mon Sep 17 00:00:00 2001',
+  'From: A U Thor <a.u.thor@example.com>',
+  'Date: Fri, 9 Jun 2006 00:44:16 -0700',
+  'Subject: [PATCH] another patch',
+  '',
+  'Here is a patch from A U Thor.  This addresses the issue raised in the',
+  'message:',
+  '',
+  'From: Nit Picker <nit.picker@example.net>',
+  'Subject: foo is too old',
+  'Message-Id: <nitpicker.12121212@example.net>',
+  '',
+  'Hopefully this would fix the problem stated there.',
+  '',
+  '',
+  'I have included an extra blank line above, but it does not have to be',
+  'stripped away here, along with the               \t\t   ',
+  'whitespaces at the end of the above line.  They are expected to be squashed',
+  'when the message is made into a commit log by stripspace,',
+  'Also, there are three blank lines after this paragraph,',
+  'two truly blank and another full of spaces in between.',
+  ''
+]
+====    [ 'From: ', 'Date: ', 'Subject: ' ]
+====    [ 'Date: ', 'Subject: ' ]
+====    [ 'Subject: ' ]
+====    []
+===True True====>  Subject: [PATCH] a commit.
+===True True====>  
+===True True====>  Here is a patch from A U Thor.
+===True True====>  
+===True True====>  ---
+===True True====>   foo |    2 +-
+===True True====>   1 files changed, 1 insertions(+), 1 deletions(-)
+===True True====>  
+===True True====>  diff --git a/foo b/foo
+===True True====>  index 9123cdc..918dcf8 100644
+===True True====>  --- a/foo
+===True True====>  +++ b/foo
+===True True====>  @@ -1 +1 @@
+===True True====>  -Fri Jun  9 00:44:04 PDT 2006
+===True True====>  +Fri Jun  9 00:44:13 PDT 2006
+===True True====>  -- 
+===True True====>  1.4.0.g6f2b
+===True True====>  
+===True True====>  From nobody Mon Sep 17 00:00:00 2001
+===True True====>  From: A U Thor <a.u.thor@example.com>
+===True True====>  Date: Fri, 9 Jun 2006 00:44:16 -0700
+===True True====>  Subject: [PATCH] another patch
+===True True====>  
+===True True====>  Here is a patch from A U Thor.  This addresses the issue raised in the
+===True True====>  message:
+===True True====>  
+===True True====>  From: Nit Picker <nit.picker@example.net>
+===True True====>  Subject: foo is too old
+===True True====>  Message-Id: <nitpicker.12121212@example.net>
+===True True====>  
+===True True====>  Hopefully this would fix the problem stated there.
+===True True====>  
+===True True====>  
+===True True====>  I have included an extra blank line above, but it does not have to be
+===True True====>  stripped away here, along with the               		   
+===True True====>  whitespaces at the end of the above line.  They are expected to be squashed
+===True True====>  when the message is made into a commit log by stripspace,
+===True True====>  Also, there are three blank lines after this paragraph,
+===True True====>  two truly blank and another full of spaces in between.
+===True True====>  
+$$$$$$$$$$$  46 false
+47 [
+  'From nobody Mon Sep 17 00:00:00 2001',
+  'From: A (zzz)',
+  '      U',
+  '      Thor',
+  '      <a.u.thor@example.com> (Comment)',
+  'Date: Fri, 9 Jun 2006 00:44:16 -0700',
+  'Subject: [PATCH] a commit.',
+  '',
+  'Here is a patch from A U Thor.',
+  '',
+  '---',
+  ' foo |    2 +-',
+  ' 1 files changed, 1 insertions(+), 1 deletions(-)',
+  '',
+  'diff --git a/foo b/foo',
+  'index 9123cdc..918dcf8 100644',
+  '--- a/foo',
+  '+++ b/foo',
+  '@@ -1 +1 @@',
+  '-Fri Jun  9 00:44:04 PDT 2006',
+  '+Fri Jun  9 00:44:13 PDT 2006',
+  '-- ',
+  '1.4.0.g6f2b',
+  '',
+  'From nobody Mon Sep 17 00:00:00 2001',
+  'From: A U Thor <a.u.thor@example.com>',
+  'Date: Fri, 9 Jun 2006 00:44:16 -0700',
+  'Subject: [PATCH] another patch',
+  '',
+  'Here is a patch from A U Thor.  This addresses the issue raised in the',
+  'message:',
+  '',
+  'From: Nit Picker <nit.picker@example.net>',
+  'Subject: foo is too old',
+  'Message-Id: <nitpicker.12121212@example.net>',
+  '',
+  'Hopefully this would fix the problem stated there.',
+  '',
+  '',
+  'I have included an extra blank line above, but it does not have to be',
+  'stripped away here, along with the               \t\t   ',
+  'whitespaces at the end of the above line.  They are expected to be squashed',
+  'when the message is made into a commit log by stripspace,',
+  'Also, there are three blank lines after this paragraph,',
+  'two truly blank and another full of spaces in between.',
+  '',
+  '            '
+]
+====    [ 'From: ', 'Date: ', 'Subject: ' ]
+====    [ 'Date: ', 'Subject: ' ]
+====    [ 'Subject: ' ]
+====    []
+===True True====>  Subject: [PATCH] a commit.
+===True True====>  
+===True True====>  Here is a patch from A U Thor.
+===True True====>  
+===True True====>  ---
+===True True====>   foo |    2 +-
+===True True====>   1 files changed, 1 insertions(+), 1 deletions(-)
+===True True====>  
+===True True====>  diff --git a/foo b/foo
+===True True====>  index 9123cdc..918dcf8 100644
+===True True====>  --- a/foo
+===True True====>  +++ b/foo
+===True True====>  @@ -1 +1 @@
+===True True====>  -Fri Jun  9 00:44:04 PDT 2006
+===True True====>  +Fri Jun  9 00:44:13 PDT 2006
+===True True====>  -- 
+===True True====>  1.4.0.g6f2b
+===True True====>  
+===True True====>  From nobody Mon Sep 17 00:00:00 2001
+===True True====>  From: A U Thor <a.u.thor@example.com>
+===True True====>  Date: Fri, 9 Jun 2006 00:44:16 -0700
+===True True====>  Subject: [PATCH] another patch
+===True True====>  
+===True True====>  Here is a patch from A U Thor.  This addresses the issue raised in the
+===True True====>  message:
+===True True====>  
+===True True====>  From: Nit Picker <nit.picker@example.net>
+===True True====>  Subject: foo is too old
+===True True====>  Message-Id: <nitpicker.12121212@example.net>
+===True True====>  
+===True True====>  Hopefully this would fix the problem stated there.
+===True True====>  
+===True True====>  
+===True True====>  I have included an extra blank line above, but it does not have to be
+===True True====>  stripped away here, along with the               		   
+===True True====>  whitespaces at the end of the above line.  They are expected to be squashed
+===True True====>  when the message is made into a commit log by stripspace,
+===True True====>  Also, there are three blank lines after this paragraph,
+===True True====>  two truly blank and another full of spaces in between.
+===True True====>  
+===True True====>              
+$$$$$$$$$$$  47 false
+48 [
+  'From nobody Mon Sep 17 00:00:00 2001',
+  'From: A (zzz)',
+  '      U',
+  '      Thor',
+  '      <a.u.thor@example.com> (Comment)',
+  'Date: Fri, 9 Jun 2006 00:44:16 -0700',
+  'Subject: [PATCH] a commit.',
+  '',
+  'Here is a patch from A U Thor.',
+  '',
+  '---',
+  ' foo |    2 +-',
+  ' 1 files changed, 1 insertions(+), 1 deletions(-)',
+  '',
+  'diff --git a/foo b/foo',
+  'index 9123cdc..918dcf8 100644',
+  '--- a/foo',
+  '+++ b/foo',
+  '@@ -1 +1 @@',
+  '-Fri Jun  9 00:44:04 PDT 2006',
+  '+Fri Jun  9 00:44:13 PDT 2006',
+  '-- ',
+  '1.4.0.g6f2b',
+  '',
+  'From nobody Mon Sep 17 00:00:00 2001',
+  'From: A U Thor <a.u.thor@example.com>',
+  'Date: Fri, 9 Jun 2006 00:44:16 -0700',
+  'Subject: [PATCH] another patch',
+  '',
+  'Here is a patch from A U Thor.  This addresses the issue raised in the',
+  'message:',
+  '',
+  'From: Nit Picker <nit.picker@example.net>',
+  'Subject: foo is too old',
+  'Message-Id: <nitpicker.12121212@example.net>',
+  '',
+  'Hopefully this would fix the problem stated there.',
+  '',
+  '',
+  'I have included an extra blank line above, but it does not have to be',
+  'stripped away here, along with the               \t\t   ',
+  'whitespaces at the end of the above line.  They are expected to be squashed',
+  'when the message is made into a commit log by stripspace,',
+  'Also, there are three blank lines after this paragraph,',
+  'two truly blank and another full of spaces in between.',
+  '',
+  '            ',
+  ''
+]
+====    [ 'From: ', 'Date: ', 'Subject: ' ]
+====    [ 'Date: ', 'Subject: ' ]
+====    [ 'Subject: ' ]
+====    []
+===True True====>  Subject: [PATCH] a commit.
+===True True====>  
+===True True====>  Here is a patch from A U Thor.
+===True True====>  
+===True True====>  ---
+===True True====>   foo |    2 +-
+===True True====>   1 files changed, 1 insertions(+), 1 deletions(-)
+===True True====>  
+===True True====>  diff --git a/foo b/foo
+===True True====>  index 9123cdc..918dcf8 100644
+===True True====>  --- a/foo
+===True True====>  +++ b/foo
+===True True====>  @@ -1 +1 @@
+===True True====>  -Fri Jun  9 00:44:04 PDT 2006
+===True True====>  +Fri Jun  9 00:44:13 PDT 2006
+===True True====>  -- 
+===True True====>  1.4.0.g6f2b
+===True True====>  
+===True True====>  From nobody Mon Sep 17 00:00:00 2001
+===True True====>  From: A U Thor <a.u.thor@example.com>
+===True True====>  Date: Fri, 9 Jun 2006 00:44:16 -0700
+===True True====>  Subject: [PATCH] another patch
+===True True====>  
+===True True====>  Here is a patch from A U Thor.  This addresses the issue raised in the
+===True True====>  message:
+===True True====>  
+===True True====>  From: Nit Picker <nit.picker@example.net>
+===True True====>  Subject: foo is too old
+===True True====>  Message-Id: <nitpicker.12121212@example.net>
+===True True====>  
+===True True====>  Hopefully this would fix the problem stated there.
+===True True====>  
+===True True====>  
+===True True====>  I have included an extra blank line above, but it does not have to be
+===True True====>  stripped away here, along with the               		   
+===True True====>  whitespaces at the end of the above line.  They are expected to be squashed
+===True True====>  when the message is made into a commit log by stripspace,
+===True True====>  Also, there are three blank lines after this paragraph,
+===True True====>  two truly blank and another full of spaces in between.
+===True True====>  
+===True True====>              
+===True True====>  
+$$$$$$$$$$$  48 false
+50 [
+  'From nobody Mon Sep 17 00:00:00 2001',
+  'From: A (zzz)',
+  '      U',
+  '      Thor',
+  '      <a.u.thor@example.com> (Comment)',
+  'Date: Fri, 9 Jun 2006 00:44:16 -0700',
+  'Subject: [PATCH] a commit.',
+  '',
+  'Here is a patch from A U Thor.',
+  '',
+  '---',
+  ' foo |    2 +-',
+  ' 1 files changed, 1 insertions(+), 1 deletions(-)',
+  '',
+  'diff --git a/foo b/foo',
+  'index 9123cdc..918dcf8 100644',
+  '--- a/foo',
+  '+++ b/foo',
+  '@@ -1 +1 @@',
+  '-Fri Jun  9 00:44:04 PDT 2006',
+  '+Fri Jun  9 00:44:13 PDT 2006',
+  '-- ',
+  '1.4.0.g6f2b',
+  '',
+  'From nobody Mon Sep 17 00:00:00 2001',
+  'From: A U Thor <a.u.thor@example.com>',
+  'Date: Fri, 9 Jun 2006 00:44:16 -0700',
+  'Subject: [PATCH] another patch',
+  '',
+  'Here is a patch from A U Thor.  This addresses the issue raised in the',
+  'message:',
+  '',
+  'From: Nit Picker <nit.picker@example.net>',
+  'Subject: foo is too old',
+  'Message-Id: <nitpicker.12121212@example.net>',
+  '',
+  'Hopefully this would fix the problem stated there.',
+  '',
+  '',
+  'I have included an extra blank line above, but it does not have to be',
+  'stripped away here, along with the               \t\t   ',
+  'whitespaces at the end of the above line.  They are expected to be squashed',
+  'when the message is made into a commit log by stripspace,',
+  'Also, there are three blank lines after this paragraph,',
+  'two truly blank and another full of spaces in between.',
+  '',
+  '            ',
+  '',
+  'Hope this helps.',
+  ''
+]
+====    [ 'From: ', 'Date: ', 'Subject: ' ]
+====    [ 'Date: ', 'Subject: ' ]
+====    [ 'Subject: ' ]
+====    []
+===True True====>  Subject: [PATCH] a commit.
+===True True====>  
+===True True====>  Here is a patch from A U Thor.
+===True True====>  
+===True True====>  ---
+===True True====>   foo |    2 +-
+===True True====>   1 files changed, 1 insertions(+), 1 deletions(-)
+===True True====>  
+===True True====>  diff --git a/foo b/foo
+===True True====>  index 9123cdc..918dcf8 100644
+===True True====>  --- a/foo
+===True True====>  +++ b/foo
+===True True====>  @@ -1 +1 @@
+===True True====>  -Fri Jun  9 00:44:04 PDT 2006
+===True True====>  +Fri Jun  9 00:44:13 PDT 2006
+===True True====>  -- 
+===True True====>  1.4.0.g6f2b
+===True True====>  
+===True True====>  From nobody Mon Sep 17 00:00:00 2001
+===True True====>  From: A U Thor <a.u.thor@example.com>
+===True True====>  Date: Fri, 9 Jun 2006 00:44:16 -0700
+===True True====>  Subject: [PATCH] another patch
+===True True====>  
+===True True====>  Here is a patch from A U Thor.  This addresses the issue raised in the
+===True True====>  message:
+===True True====>  
+===True True====>  From: Nit Picker <nit.picker@example.net>
+===True True====>  Subject: foo is too old
+===True True====>  Message-Id: <nitpicker.12121212@example.net>
+===True True====>  
+===True True====>  Hopefully this would fix the problem stated there.
+===True True====>  
+===True True====>  
+===True True====>  I have included an extra blank line above, but it does not have to be
+===True True====>  stripped away here, along with the               		   
+===True True====>  whitespaces at the end of the above line.  They are expected to be squashed
+===True True====>  when the message is made into a commit log by stripspace,
+===True True====>  Also, there are three blank lines after this paragraph,
+===True True====>  two truly blank and another full of spaces in between.
+===True True====>  
+===True True====>              
+===True True====>  
+===True True====>  Hope this helps.
+===True True====>  
+$$$$$$$$$$$  50 false
+54 [
+  'From nobody Mon Sep 17 00:00:00 2001',
+  'From: A (zzz)',
+  '      U',
+  '      Thor',
+  '      <a.u.thor@example.com> (Comment)',
+  'Date: Fri, 9 Jun 2006 00:44:16 -0700',
+  'Subject: [PATCH] a commit.',
+  '',
+  'Here is a patch from A U Thor.',
+  '',
+  '---',
+  ' foo |    2 +-',
+  ' 1 files changed, 1 insertions(+), 1 deletions(-)',
+  '',
+  'diff --git a/foo b/foo',
+  'index 9123cdc..918dcf8 100644',
+  '--- a/foo',
+  '+++ b/foo',
+  '@@ -1 +1 @@',
+  '-Fri Jun  9 00:44:04 PDT 2006',
+  '+Fri Jun  9 00:44:13 PDT 2006',
+  '-- ',
+  '1.4.0.g6f2b',
+  '',
+  'From nobody Mon Sep 17 00:00:00 2001',
+  'From: A U Thor <a.u.thor@example.com>',
+  'Date: Fri, 9 Jun 2006 00:44:16 -0700',
+  'Subject: [PATCH] another patch',
+  '',
+  'Here is a patch from A U Thor.  This addresses the issue raised in the',
+  'message:',
+  '',
+  'From: Nit Picker <nit.picker@example.net>',
+  'Subject: foo is too old',
+  'Message-Id: <nitpicker.12121212@example.net>',
+  '',
+  'Hopefully this would fix the problem stated there.',
+  '',
+  '',
+  'I have included an extra blank line above, but it does not have to be',
+  'stripped away here, along with the               \t\t   ',
+  'whitespaces at the end of the above line.  They are expected to be squashed',
+  'when the message is made into a commit log by stripspace,',
+  'Also, there are three blank lines after this paragraph,',
+  'two truly blank and another full of spaces in between.',
+  '',
+  '            ',
+  '',
+  'Hope this helps.',
+  '',
+  '---',
+  ' foo |    2 +-',
+  ' 1 files changed, 1 insertions(+), 1 deletions(-)',
+  ''
+]
+====    [ 'From: ', 'Date: ', 'Subject: ' ]
+====    [ 'Date: ', 'Subject: ' ]
+====    [ 'Subject: ' ]
+====    []
+===True True====>  Subject: [PATCH] a commit.
+===True True====>  
+===True True====>  Here is a patch from A U Thor.
+===True True====>  
+===True True====>  ---
+===True True====>   foo |    2 +-
+===True True====>   1 files changed, 1 insertions(+), 1 deletions(-)
+===True True====>  
+===True True====>  diff --git a/foo b/foo
+===True True====>  index 9123cdc..918dcf8 100644
+===True True====>  --- a/foo
+===True True====>  +++ b/foo
+===True True====>  @@ -1 +1 @@
+===True True====>  -Fri Jun  9 00:44:04 PDT 2006
+===True True====>  +Fri Jun  9 00:44:13 PDT 2006
+===True True====>  -- 
+===True True====>  1.4.0.g6f2b
+===True True====>  
+===True True====>  From nobody Mon Sep 17 00:00:00 2001
+===True True====>  From: A U Thor <a.u.thor@example.com>
+===True True====>  Date: Fri, 9 Jun 2006 00:44:16 -0700
+===True True====>  Subject: [PATCH] another patch
+===True True====>  
+===True True====>  Here is a patch from A U Thor.  This addresses the issue raised in the
+===True True====>  message:
+===True True====>  
+===True True====>  From: Nit Picker <nit.picker@example.net>
+===True True====>  Subject: foo is too old
+===True True====>  Message-Id: <nitpicker.12121212@example.net>
+===True True====>  
+===True True====>  Hopefully this would fix the problem stated there.
+===True True====>  
+===True True====>  
+===True True====>  I have included an extra blank line above, but it does not have to be
+===True True====>  stripped away here, along with the               		   
+===True True====>  whitespaces at the end of the above line.  They are expected to be squashed
+===True True====>  when the message is made into a commit log by stripspace,
+===True True====>  Also, there are three blank lines after this paragraph,
+===True True====>  two truly blank and another full of spaces in between.
+===True True====>  
+===True True====>              
+===True True====>  
+===True True====>  Hope this helps.
+===True True====>  
+===True True====>  ---
+===True True====>   foo |    2 +-
+===True True====>   1 files changed, 1 insertions(+), 1 deletions(-)
+===True True====>  
+$$$$$$$$$$$  54 false
+Done
